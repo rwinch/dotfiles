@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# 1st arg (how many branches in history to show)
+S=${1:-10}
+# 2nd arg (how many commits for each branch to show)
+L=${2:-1}
+echo -e "\nLast $S branches with $L commits\n"
+for ((i=-1;i>=-$S;i--)); do echo -e "-----\n" "@{$i}\n-----" ;(git branch --points-at @{$i} && git --no-pager log -n $L --pretty='     %s' @{$i}) 2> /dev/null || echo '  Deleted Branch';done

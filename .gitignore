@@ -1,0 +1,6 @@
+*
+
+!.gitignore
+!.zshrc
+!bin/
+!bin/*

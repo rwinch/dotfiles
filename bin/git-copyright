@@ -1,0 +1,4 @@
+#!/bin/bash
+
+YEAR=`date +'%Y'`
+git --no-pager diff --name-only | grep java | xargs perl -pi -e "s/(Copyright \d{4})(-\d{4})?( the original author or authors.)$/\1-$YEAR\3/"

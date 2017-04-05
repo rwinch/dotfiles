@@ -1,0 +1,24 @@
+#!/bin/zsh
+
+# Run this in an empty directory
+
+# Can obtain repositories using something like this
+# curl 'https://api.github.com/orgs/spring-projects/repos?per_page=1000' | jq '.[].name' | grep security | tr -d '"' | tr '\n' ' '
+
+# update the username "rwinch" to your github username
+
+source ~/.zshrc
+
+for r (spring-security spring-security-kerberos spring-security-oauth spring-security-saml spring-session spring-ldap)
+do
+	git clone "https://github.com/spring-projects/$r"
+	cd $r
+	git fork
+	git remote add gh-pages-upstream https://github.com/spring-projects/gh-pages.git 
+	git fetch gh-pages-upstream
+	git checkout -b gh-pages origin/gh-pages
+	git pull gh-pages-upstream gh-pages
+	git push -f rwinch
+	git pull-request -b spring-projects:gh-pages -m "Merge spring-projects/gh-pages" --browse &
+	cd ..
+done
