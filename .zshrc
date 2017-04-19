@@ -3,6 +3,7 @@ source $HOME/antigen.zsh
 # Load the oh-my-zsh's library
 antigen use oh-my-zsh
 
+antigen bundle extract
 antigen bundle git
 antigen bundle github
 antigen bundle gradle
