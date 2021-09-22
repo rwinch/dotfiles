@@ -12,6 +12,7 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-completions
 #antigen bundle zsh-users/zsh-autosuggestions
 
+antigen bundle rwinch/zsh-plugins antora-rename
 antigen bundle rwinch/zsh-plugins copy
 antigen bundle rwinch/zsh-plugins gh-update
 antigen bundle rwinch/zsh-plugins git-recent
