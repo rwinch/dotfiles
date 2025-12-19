@@ -17,8 +17,14 @@ antigen bundle rwinch/zsh-plugins gh-update
 antigen bundle rwinch/zsh-plugins git-recent
 antigen bundle rwinch/zsh-plugins gw
 antigen bundle rwinch/zsh-plugins merge-dependency-upgrades
+antigen bundle rwinch/zsh-plugins git-add-remote
+antigen bundle rwinch/zsh-plugins git-clone-as-owner
+antigen bundle rwinch/zsh-plugins git-clone-convention
+antigen bundle rwinch/zsh-plugins git-create-worktrees
+antigen bundle rwinch/zsh-plugins git-url
 
 # Load the theme
 antigen theme robbyrussell
 
 antigen apply
+
